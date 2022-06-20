@@ -2,9 +2,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarDealer {
-    public static final int MILLIS_DELIVERY = 5000;
-    public static final int MILLIS_SELL = 2000;
-    public List<Car> cars = new ArrayList<>();
+    private final int MILLIS_DELIVERY;
+    private final int MILLIS_SELL;
+    private final List<Car> cars = new ArrayList<>();
+
+    public CarDealer(int MILLIS_DELIVERY, int MILLIS_SELL) {
+        this.MILLIS_DELIVERY = MILLIS_DELIVERY;
+        this.MILLIS_SELL = MILLIS_SELL;
+    }
 
     public synchronized void deliverCar() {
         try {
